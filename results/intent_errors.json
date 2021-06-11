@@ -1,0 +1,130 @@
+[
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.23899589478969574
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.19584746658802032
+    }
+  },
+  {
+    "text": "not very good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.308835506439209
+    }
+  },
+  {
+    "text": "From whom can i get the presentation schedule",
+    "intent": "other_basic_information",
+    "intent_prediction": {
+      "name": "seminar_end",
+      "confidence": 0.14950263500213623
+    }
+  },
+  {
+    "text": "how can i check the schedule for my presentation?",
+    "intent": "other_basic_information",
+    "intent_prediction": {
+      "name": "topic_information",
+      "confidence": 0.1350945383310318
+    }
+  },
+  {
+    "text": "i want to deregister for the topic",
+    "intent": "topic_deregistration",
+    "intent_prediction": {
+      "name": "ptr_report_making",
+      "confidence": 0.13842250406742096
+    }
+  },
+  {
+    "text": "what should i do if the registration is already closed",
+    "intent": "topic_deregistration",
+    "intent_prediction": {
+      "name": "submission_deadline",
+      "confidence": 0.14998339116573334
+    }
+  },
+  {
+    "text": "whom should i request for deregistration?",
+    "intent": "topic_deregistration",
+    "intent_prediction": {
+      "name": "hauptseminar_repeat",
+      "confidence": 0.3514765501022339
+    }
+  },
+  {
+    "text": "is it possible to deregister from my topic after the registration closes?",
+    "intent": "topic_deregistration",
+    "intent_prediction": {
+      "name": "switch_topic",
+      "confidence": 0.1433863341808319
+    }
+  },
+  {
+    "text": "can i get another appointment for presentation if i get ill",
+    "intent": "ill_presentation",
+    "intent_prediction": {
+      "name": "seminar_participation",
+      "confidence": 0.13930203020572662
+    }
+  },
+  {
+    "text": "i need to know how the report should be",
+    "intent": "report_query_look",
+    "intent_prediction": {
+      "name": "ptr_report_making",
+      "confidence": 0.23748981952667236
+    }
+  },
+  {
+    "text": "how long my report should be",
+    "intent": "report_query_length",
+    "intent_prediction": {
+      "name": "ptr_report_making",
+      "confidence": 0.26044589281082153
+    }
+  },
+  {
+    "text": "Can i just do the report if my presentation is already done",
+    "intent": "report_incomplete",
+    "intent_prediction": {
+      "name": "seminar_end",
+      "confidence": 0.15990085899829865
+    }
+  },
+  {
+    "text": "can i write report with the same topic i presented in last semester",
+    "intent": "report_incomplete",
+    "intent_prediction": {
+      "name": "seminar_end",
+      "confidence": 0.15179140865802765
+    }
+  },
+  {
+    "text": "is it allowed to write the report if the presentation is already finished",
+    "intent": "report_incomplete",
+    "intent_prediction": {
+      "name": "seminar_end",
+      "confidence": 0.18309682607650757
+    }
+  },
+  {
+    "text": "do i need to register again with the topic if the report is missing",
+    "intent": "report_incomplete",
+    "intent_prediction": {
+      "name": "ptr_report_making",
+      "confidence": 0.14263659715652466
+    }
+  }
+]

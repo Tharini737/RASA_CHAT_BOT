@@ -1,0 +1,296 @@
+version: "2.0"
+
+intents:
+  - greet
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - out_of_scope
+  - presentation_appointment_button
+  - presentation_template
+  - schedule
+  - change
+  #- validate_schedule_form
+  - action_submit
+  - attendance
+  - ill_presentation
+  - own_topic
+  - switch_topic
+  - topic_information
+  - enrollment_full
+  - topic_deregistration
+  - report_query_look
+  - ptr_report_making
+  - report_query_length
+  - report_query_title_page
+  - report_incomplete
+  - report_submit
+  - submission_deadline
+  - seminar_end
+  - seminar_participation
+  - hauptseminar_repeat
+  - know_more
+  - own_topic_proposal
+  - Introduction
+
+  #- schedule_email
+  #   use_entities:
+  #    -scheduledata
+  #- schedule_number
+  #   use_entities:
+  #     -number
+
+
+
+actions:
+ - utter_greet
+ - utter_happy
+ - utter_cheer_up
+ - utter_did_that_help
+ - utter_presentation_appointment
+ - utter_change_reply
+ - utter_presentation_template
+ - utter_deny
+ - utter_iamabot
+# - utter_out_of_scope
+ #- validate_schedule_form
+ - action_submit
+ - utter_intro
+ #- utter_schedule_reply
+ - utter_enrollment_full
+ - utter_deregistration
+ - utter_ill
+ - utter_choosing_own_topic
+ - utter_own_topic_proposal
+ - utter_information_for_topic
+ - utter_information_for_topic_one
+ - utter_switching_topic
+ - utter_report_look
+ - utter_ptr_report_making
+ - utter_report_query_length
+ - utter_report_query_title_page
+ - utter_report_incomplete
+ - utter_report_submit
+ - utter_submission_deadline
+ - utter_seminar_end
+ - utter_seminar_participation
+ - utter_seminar_participation_one
+ - utter_hauptseminar_repeat
+ - utter_attendance
+ - utter_attendance_one
+
+#entities:
+#  - scheduledata
+  #  - name
+#  - number
+forms:
+ schedule_form:
+  email:
+   - type: from_text
+     #entity: email
+#  name:
+#   - type: from_entity
+#     entity: name
+  subject:
+   - type: from_text
+     #entity: subject
+
+  message:
+   - type: from_text
+
+slots:
+ email:
+  type: text
+#  influence_conversation: false
+# name:
+#  type: text
+ subject:
+  type: text
+
+ message:
+   type: text
+
+
+
+responses:
+  utter_greet:
+  - text: "Hey! I am Anne. How can i assist you?"
+    buttons:
+      - payload: '/Introduction'
+        title: "Presentation"
+
+      - payload: '/Introduction'
+        title: "Report"
+
+      - payload: '/Introduction'
+        title: "hauptseminar"
+
+      - payload: '/Introduction'
+        title: "Lecture attendance"
+
+      - payload: '/Introduction'
+        title: "Lecture Enrollment"
+
+      - payload: '/Introduction'
+        title: "topic deregistration"
+
+      - payload: '/Introduction'
+        title: "Seminar"
+
+      - payload: '/Introduction'
+        title: "Deadlines"
+
+
+  utter_intro:
+  - text: "What would you like to know"
+    #buttons:
+    #    - payload: '/presentation_appointment_button'
+#title: "presentation appointment"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+    buttons:
+      - payload: '/affirm'
+        title: "yes"
+      - payload: '/deny'
+        title: "not really"
+
+  utter_happy:
+  - text: "Great, Have a nice day:)"
+
+  #utter_goodbye:
+  #- text: "Bye"
+
+  utter_deny:
+  - text: "If you did not get enough information here, I would suggest you to email ce-teaching@informatik.tu-chemnitz.de"
+
+  utter_iamabot:
+  - text: "Yes,i am a bot and i was developed and trained by Mr.Guhan and Ms.Tharini"
+
+  #utter_out_of_scope:
+  #- text: "Sorry,i didn't understand.Please try again"
+
+  utter_ask_email:
+  - text: "can you please provide an email whom you want to send?"
+
+  utter_ask_subject:
+  - text: "write your subject for an email"
+
+  utter_ask_message:
+  - text: "Now write your message here and press enter"
+
+  utter_presentation_appointment:
+  - text: "What information you want regarding presentation appointment"
+    buttons:
+      - payload: '/schedule'
+        title: "Schedule the appointment"
+
+      - payload: '/change'
+        title: "Date/time change of the appointment"
+
+
+#  utter_schedule_reply:
+#  - text: "Please enter your email id "
+
+#  utter_details_thanks:
+#  - text: "Thanks for providing the given details.Your supervisor will receive the appointment request for\n\nEmail id: {scheduledata}\n\nmatriculation number: {number}"
+
+  utter_change_reply:
+  - text: "You get your fixed appointments from your supervisor. Unfortunately the schedule cannot be changed."
+
+  #utter_other_basic_information_reply:
+  #- text: "All appointments for the presentation will be finalised by the respective supervisors.If changes happens,the supervisor will inform to you through your email."
+
+
+
+  #- text: "you can get your fixed appointments from your respective supervisor.Unfortunately the schedule cannot be changed."
+
+  utter_presentation_template:
+  - text: "Here you can find the [template](https://www.tu-chemnitz.de/informatik/ce/lectures/master.php.en#template) for presentation and report with and without logo."
+
+  utter_enrollment_full:
+  - text: "If the registration is full, no new slots can be provided. There is a possibility to register in the waiting list for one course"
+
+  utter_deregistration:
+  - text: "You can request deregistration by writing E-Mail to ce-teaching@informatik.tu-chemnitz.de"
+
+  utter_attendance:
+  - text: "Attendance is compulsory for all lessons but you are allowed to miss a maximum of 2 lessons. Futhermore appointment with the group is fixed "
+
+  utter_attendance_one:
+  - text: "As an exception you can proceed to next lesson even if the first lesson of the week is missed"
+
+  utter_ill:
+  - text: "Please e-mail to the course leader before the presentation day and provide a medical certificate from nearby doctor within 3 days"
+
+  utter_switching_topic:
+  - text: "It is possible to switch topic during registration and its not allowed once registration is closed"
+
+  utter_choosing_own_topic:
+  - text: "your own topic can be approved by sending a proposal of one page containing explanation about your topic and 5 literature surveys"
+
+  utter_own_topic_proposal:
+  - text: "The proposal should explain the importance of your topic and your contributions to solve problems"
+
+  utter_information_for_topic:
+  - text: "You have to find your topic information by your own\n\nPlease take a look on [scholar](https://scholar.google.com/) or [IEEE](http://ieeexplore.ieee.org/Xplore/guesthome.jsp)"
+
+  utter_information_for_topic_one:
+  - text: "Note:Its a mandatory task for research project and master thesis. Lastly you can seek help from your supervisor but your marks might be reduced"
+
+  utter_report_look:
+  - text: "Here you can find the sample [report](https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/1508016135/CourseNode/85620866361075)"
+
+  utter_ptr_report_making:
+  - text: "A good report consists of texts on your own,\n\nTable of contents,\nList of figures,\nappropriate references with citations"
+
+  utter_report_query_length:
+  - text: "The main content of report should be 10 to 15 pages without including title page,list of figures and references"
+
+  utter_report_query_title_page:
+  - text: "Your title page of report should contain:\n
+           \n1.Title of your work\n\n2.supervisor name\n\n3.Author name\n\n4.Matrikulation number/student ID\n\n5.Date of submission"
+
+  utter_report_incomplete:
+  - text: "You need to register for new topic and start your report in the current semester"
+
+  utter_report_submit:
+  - text: "You can send the report file to ce-teaching@informatik.tu-chemnitz.de with the title as example `Report submission WS2020´"
+    buttons:
+      - payload: /know_more
+        title: "know more"
+
+  utter_know_more:
+  - text: "1.You will receive an automated response after submission\n\n2.It is not required to send it twice incase of any issues\n\n3.Please make sure to save the file as shown in example:Albert_einstein_156379.pdf and avoid white spaces or special characters\n\n4.Only pdf file is accepted and not Word or Latex files"
+
+  utter_submission_deadline:
+  - text: "You can find the deadlines and all important points in OPAL Course within their respective folders"
+
+  utter_seminar_end:
+  - text: "You can be able to end the seminar during semester with grade 5"
+
+  utter_seminar_participation:
+  - text: "Yes, you can register in the seminar group before the semester starts with the copy of internship contract"
+
+  utter_seminar_participation_one:
+  - text: "Note: You have no exception to change your seminar appointment due to your internship"
+
+  utter_hauptseminar_repeat:
+  - text: "You are only allowed to repeat the hauptseminar if your score is 5"
+
+
+
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
